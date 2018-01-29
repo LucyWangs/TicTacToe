@@ -12,8 +12,13 @@ class TicTacToe;
 
 class TicTacToe
 {
-    //Things needed in this method:
+    //Things needed in this class:
+    //checkWin
+    //printGrid
+    //placePiece
     //
+    
+    //input names
 };
 
 class SuperTicTacToe
