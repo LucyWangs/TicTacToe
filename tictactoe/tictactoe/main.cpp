@@ -59,6 +59,8 @@ public:
     bool checkWin();
     bool placePiece(Piece p, int row, int col);
     std::string getWinner();
+    void printGrid();
+    bool isFull();
 };
 
 class SuperTicTacToe
@@ -74,6 +76,14 @@ class SuperTicTacToe
 std::string* TicTacToe::getGrid()
 {
     return *board;
+}
+
+void TicTacToe::printGrid(){
+    std::cout << board[0][0] << "  |  " << board[0][1] <<"  |  "<< board[0][2] << '\n';
+    std::cout << "-----------" << '\n';
+    std::cout << board[1][0] <<"  |  "<< board[1][1] <<"  |  "<< board[1][2] << '\n';
+    std::cout << "-----------" << '\n';
+    std::cout << board[2][0] <<"  |  "<< board[2][1] <<"  |  "<< board[2][2] << '\n';
 }
 
 //This method should check if there is already a win on the board
@@ -115,6 +125,10 @@ bool TicTacToe::checkWin()
 bool TicTacToe::placePiece(Piece p, int row, int col)
 {
     bool canPlace = false;
+    if (row>=3 or col>=3){
+        return false;
+    }
+    
     if(board[row][col] == "")
     {
         switch(p)
@@ -148,10 +162,65 @@ Piece TicTacToe::getTurn(Piece current)
     }
 }
 
+//Returns bool of whether or not board is full
+bool TicTacToe::isFull(){
+    for(int i = 0; i < 3; i++){
+        for (int j=0; j<3; j++){
+            if (board[i][j] == ""){
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+    
+    TicTacToe *game = new TicTacToe;
+    std::cout << "Welcome to Super Tic Tac Toe!\n";
+    std::cout << "Player 1 will place O's and Player 2 will place X's\n";
+    while(!game->checkWin() and !game->isFull()){
+        
+        //print tictactoe board
+        game->printGrid();
+        
+        //input from player 1 (O's)
+        std::cout << "Player 1: enter a row and column\n";
+        int inputRow,inputCol;
+        std::cin  >> inputRow >> inputCol;
+        
+        //checks if move is valid, places piece
+        while(!game->placePiece(O,inputRow,inputCol)){
+            std::cout << "That is not an empty spot.  Please pick another row and column \n";
+            std::cin  >> inputRow >> inputCol;
+        }
+        //checks for win or full board
+        if(game->checkWin() || game->isFull()){break;}
+        
+        //print tictactoe board
+        game->printGrid();
+        
+        //input from player 2 (X's)
+        std::cout << "Player 2: enter a row and column\n";
+        std::cin  >> inputRow >> inputCol;
+        
+        //checks if move is valid, places piece
+        while(!game->placePiece(X,inputRow,inputCol)){
+            std::cout << "That is not an empty spot.  Please pick another row and column \n";
+            std::cin  >> inputRow >> inputCol;
+        }
+    }
+    //if loop exited, determines why and outputs appropriate statement
+    game->printGrid();
+    if(game->isFull()){
+        std::cout << "It's a tie!";
+    }
+    else{
+        std::cout << "Congrats you won!";
+    }
+
+
 }
