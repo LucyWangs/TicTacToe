@@ -215,7 +215,7 @@ int main(int argc, const char * argv[]) {
     }
     //if loop exited, determines why and outputs appropriate statement
     game->printGrid();
-    if(game->isFull()){
+    if(!checkWin()){
         std::cout << "It's a tie!";
     }
     else{
