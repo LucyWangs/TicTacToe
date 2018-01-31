@@ -66,7 +66,18 @@ public:
 class SuperTicTacToe
 {
     TicTacToe large_board[3][3];
-    //
+    Player player1;
+    Player player2;
+    
+public:
+    std::string* getLargeGrid();
+    //bool chooseBox(Piece p, char location);
+    Piece getTurn(Piece current);
+    bool checkLargeWin();
+    bool placePiece(Piece p, char super_location, char location);
+    bool placePiece(Piece p, char location);
+    bool checkGridStatus(char super_location);
+    
 };
 
 //////////////////////////////
@@ -283,6 +294,11 @@ bool TicTacToe::isFull(){
     }
     return true;
 }
+
+//////////////////////////////////
+//SuperTicTacToe Implementation
+//This class is responsible for a large game of tic-tac-toe,
+//where there is a 3 X 3 grid
 
 
 
