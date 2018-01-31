@@ -86,49 +86,49 @@ void TicTacToe::printGrid(){
     else{
         a=board[0][0];
     }
-    if (board[0][0]==""){
+    if (board[0][1]==""){
         b='B';
     }
     else{
         b=board[0][1];
     }
-    if (board[0][0]==""){
+    if (board[0][2]==""){
         c='C';
     }
     else{
         c=board[0][2];
     }
-    if (board[0][0]==""){
+    if (board[1][0]==""){
         d='D';
     }
     else{
         d=board[1][0];
     }
-    if (board[0][0]==""){
+    if (board[1][1]==""){
         e='E';
     }
     else{
         e=board[1][1];
     }
-    if (board[0][0]==""){
+    if (board[1][2]==""){
         f='F';
     }
     else{
         f=board[1][2];
     }
-    if (board[0][0]==""){
+    if (board[2][0]==""){
         g='G';
     }
     else{
         g=board[2][0];
     }
-    if (board[0][0]==""){
+    if (board[2][1]==""){
         h='H';
     }
     else{
         h=board[2][1];
     }
-    if (board[0][0]==""){
+    if (board[2][2]==""){
         i='I';
     }
     else{
@@ -298,13 +298,13 @@ int main(int argc, const char * argv[]) {
         game->printGrid();
         
         //input from player 1 (O's)
-        std::cout << "Player 1: enter a row and column\n";
+        std::cout << "Player 1: enter a letter\n";
         char inputChar;
         std::cin  >> inputChar;
         
         //checks if move is valid, places piece
         while(!game->placePiece(O,inputChar)){
-            std::cout << "That is not an empty spot.  Please pick another row and column \n";
+            std::cout << "That is not an empty spot.  Please pick another letter \n";
             std::cin  >> inputChar;
         }
         //checks for win or full board
@@ -319,7 +319,7 @@ int main(int argc, const char * argv[]) {
         
         //checks if move is valid, places piece
         while(!game->placePiece(X,inputChar)){
-            std::cout << "That is not an empty spot.  Please pick another row and column \n";
+            std::cout << "That is not an empty spot.  Please pick another letter \n";
             std::cin  >> inputChar;
         }
     }
