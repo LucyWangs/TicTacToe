@@ -57,7 +57,7 @@ public:
     std::string* getGrid();
     Piece getTurn(Piece current);
     bool checkWin();
-    bool placePiece(Piece p, int row, int col);
+    bool placePiece(Piece p, char location);
     std::string getWinner();
     void printGrid();
     bool isFull();
@@ -79,11 +79,68 @@ std::string* TicTacToe::getGrid()
 }
 
 void TicTacToe::printGrid(){
-    std::cout << board[0][0] << "  |  " << board[0][1] <<"  |  "<< board[0][2] << '\n';
+    std::string a,b,c,d,e,f,g,h,i;
+    if (board[0][0]==""){
+        a='A';
+    }
+    else{
+        a=board[0][0];
+    }
+    if (board[0][0]==""){
+        b='B';
+    }
+    else{
+        b=board[0][1];
+    }
+    if (board[0][0]==""){
+        c='C';
+    }
+    else{
+        c=board[0][2];
+    }
+    if (board[0][0]==""){
+        d='D';
+    }
+    else{
+        d=board[1][0];
+    }
+    if (board[0][0]==""){
+        e='E';
+    }
+    else{
+        e=board[1][1];
+    }
+    if (board[0][0]==""){
+        f='F';
+    }
+    else{
+        f=board[1][2];
+    }
+    if (board[0][0]==""){
+        g='G';
+    }
+    else{
+        g=board[2][0];
+    }
+    if (board[0][0]==""){
+        h='H';
+    }
+    else{
+        h=board[2][1];
+    }
+    if (board[0][0]==""){
+        i='I';
+    }
+    else{
+        i=board[2][2];
+    }
+    
+    
+    std::cout << a << "  |  " << b <<"  |  "<< c << '\n';
     std::cout << "-----------" << '\n';
-    std::cout << board[1][0] <<"  |  "<< board[1][1] <<"  |  "<< board[1][2] << '\n';
+    std::cout << d <<"  |  "<< e <<"  |  "<< f << '\n';
     std::cout << "-----------" << '\n';
-    std::cout << board[2][0] <<"  |  "<< board[2][1] <<"  |  "<< board[2][2] << '\n';
+    std::cout << g <<"  |  "<< h <<"  |  "<< i << '\n';
 }
 
 //This method should check if there is already a win on the board
@@ -122,11 +179,64 @@ bool TicTacToe::checkWin()
 }
 
 //This should place the piece based on specified location. Returns whether or not this action can be done
-bool TicTacToe::placePiece(Piece p, int row, int col)
+bool TicTacToe::placePiece(Piece p, char location)
 {
     bool canPlace = false;
-    if (row>=3 or col>=3){
-        return false;
+//    if (row>=3 or col>=3){
+//        return false;
+//    }
+    int row, col;
+    
+    if(location == 'A')
+    {
+        row = 0;
+        col = 0;
+    }
+    else if(location == 'B')
+    {
+        row = 0;
+        col = 1;
+    }
+    else if(location == 'C')
+    {
+        row = 0;
+        col = 2;
+    }
+    else if(location == 'D')
+    {
+        row = 1;
+        col = 0;
+    }
+    else if(location == 'E')
+    {
+        row = 1;
+        col = 1;
+    }
+    else if(location == 'F')
+    {
+        row = 1;
+        col = 2;
+    }
+    else if(location == 'G')
+    {
+        row = 2;
+        col = 0;
+    }
+    else if(location == 'H')
+    {
+        row = 2;
+        col = 1;
+    }
+    else if(location == 'I')
+    {
+        row = 2;
+        col = 2;
+    }
+    else
+    {
+        row = NULL;
+        col = NULL;
+        canPlace = false;
     }
     
     if(board[row][col] == "")
@@ -189,13 +299,13 @@ int main(int argc, const char * argv[]) {
         
         //input from player 1 (O's)
         std::cout << "Player 1: enter a row and column\n";
-        int inputRow,inputCol;
-        std::cin  >> inputRow >> inputCol;
+        char inputChar;
+        std::cin  >> inputChar;
         
         //checks if move is valid, places piece
-        while(!game->placePiece(O,inputRow,inputCol)){
+        while(!game->placePiece(O,inputChar)){
             std::cout << "That is not an empty spot.  Please pick another row and column \n";
-            std::cin  >> inputRow >> inputCol;
+            std::cin  >> inputChar;
         }
         //checks for win or full board
         if(game->checkWin() || game->isFull()){break;}
@@ -205,12 +315,12 @@ int main(int argc, const char * argv[]) {
         
         //input from player 2 (X's)
         std::cout << "Player 2: enter a row and column\n";
-        std::cin  >> inputRow >> inputCol;
+        std::cin  >> inputChar;
         
         //checks if move is valid, places piece
-        while(!game->placePiece(X,inputRow,inputCol)){
+        while(!game->placePiece(X,inputChar)){
             std::cout << "That is not an empty spot.  Please pick another row and column \n";
-            std::cin  >> inputRow >> inputCol;
+            std::cin  >> inputChar;
         }
     }
     //if loop exited, determines why and outputs appropriate statement
