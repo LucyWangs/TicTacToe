@@ -9,7 +9,7 @@
 #include <iostream>
 #include <cstdlib>
 
-class RockPaperScissors;
+class TicTacToe;
 class SuperTicTacToe;
 
 enum Piece
@@ -345,4 +345,6 @@ int main(int argc, const char * argv[]) {
     
     
 }
+
+
 
