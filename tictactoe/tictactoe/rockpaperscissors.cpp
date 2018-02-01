@@ -7,14 +7,6 @@
 //
 
 #include <stdio.h>
-//
-//  rockpaperscissors.cpp
-//  tictactoe
-//
-//  Created by Lucy Wang on 1/31/18.
-//  Copyright © 2018 Lucy Wang. All rights reserved.
-//
-
 #include <iostream>
 #include <cstdlib>
 
@@ -48,7 +40,7 @@ std::string RockPaperScissors::checkWin(std::string input)
     {
         if(computerChoice == input)
         {
-            response = "It's a tie";
+            response = "It's a tie!";
         }
         else if((computerChoice == "rock" and input == "scissors") or (computerChoice == "scissors" and input == "paper") or (computerChoice == "paper" and input == "rock"))
         {
@@ -63,7 +55,7 @@ std::string RockPaperScissors::checkWin(std::string input)
     {
         if(computerChoice == input)
         {
-            response = "It's a tie";
+            response = "It's a tie!";
         }
         else if((computerChoice == "rock" and (input == "scissors" or input == "lizard")) or (computerChoice == "scissors" and (input == "paper" or input == "lizard")) or (computerChoice == "paper" and (input == "rock" or input == "spock")) or (computerChoice == "lizard" and (input == "paper" or input == "spock")) or (computerChoice == "spock" and (input == "rock" and input == "scissors")))
         {
@@ -127,7 +119,7 @@ void RockPaperScissors::run()
     std::cout << "Welcome to Rock Paper Scissors\n";
     std::cout << "You will be playing against the computer.\n";
     
-    std::cout << "Do you want to play regular rock, paper, scissors or rock, paper, scissors, lizard, spock? Please enter 'regular' or 'ls'.";
+    std::cout << "Do you want to play regular rock, paper, scissors or rock, paper, scissors, lizard, spock? Please enter 'regular' or 'ls'.\n";
     bool valid = false;
     while(!valid)
     {
@@ -137,22 +129,23 @@ void RockPaperScissors::run()
         {
             isRegular = true;
             valid = true;
+            std::cout << "Choose rock, paper, or scissors: ";
             break;
         }
         else if(input == "ls")
         {
             isRegular = false;
             valid = true;
+            std::cout << "Choose rock, paper, lizard, spock: ";
             break;
         }
         else
         {
-            std::cout << "Please enter a valid choice ('regular' or 'ls')";
+            std::cout << "Please enter a valid choice ('regular' or 'ls'): ";
         }
     }
     getChoice();
     
-    std::cout << "Player: Choose rock, paper, or scissors";
     valid = false;
     while(!valid)
     {
@@ -165,7 +158,7 @@ void RockPaperScissors::run()
         }
         else
         {
-            std::cout << "Please input a valid choice";
+            std::cout << "Please input a valid choice: ";
         }
     }
     

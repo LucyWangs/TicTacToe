@@ -62,23 +62,7 @@ public:
     std::string getWinner();
     void printGrid();
     bool isFull();
-};
-
-class SuperTicTacToe
-{
-    TicTacToe large_board[3][3];
-    Player player1;
-    Player player2;
-    
-public:
-    std::string* getLargeGrid();
-    //bool chooseBox(Piece p, char location);
-    Piece getTurn(Piece current);
-    bool checkLargeWin();
-    bool placePiece(Piece p, char super_location, char location);
-    bool placePiece(Piece p, char location);
-    bool checkGridStatus(char super_location);
-    
+    void run();
 };
 
 //////////////////////////////
@@ -297,9 +281,7 @@ bool TicTacToe::isFull(){
 }
 
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    
+void TicTacToe::run() {
     TicTacToe *game = new TicTacToe;
     std::cout << "Welcome to Super Tic Tac Toe!\n";
     std::cout << "Player 1 will place O's and Player 2 will place X's\n";
@@ -342,7 +324,6 @@ int main(int argc, const char * argv[]) {
     else{
         std::cout << "It's a tie!";
     }
-    
     
 }
 
