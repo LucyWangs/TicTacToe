@@ -59,10 +59,19 @@ int main(int argc, const char * argv[]) {
     std::cout << "Do you want to play another game?  Enter Y or N"<<'\n';
     std::string yesNoInput;
     std::cin >> yesNoInput;
+    while(yesNoInput != "Y" or yesNoInput != "N")
+    {
+        if (yesNoInput == "Y" or yesNoInput == "N")
+        {
+            break;
+        }
+        std::cout << "Please input either Y or N: ";
+        std::cin >>yesNoInput;
+    }
     if(yesNoInput=="N"){
+        std::cout << "Thanks for playing!\n";
         break;
     }
-    
     }
 }
 

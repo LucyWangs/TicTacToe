@@ -65,7 +65,7 @@ void Hangman::run(){
     int wrong_guesses = 0;
     std::string word_to_guess;
     std::ifstream file;
-    file.open ("/Users/kjain/Documents/Final Project/deminem/deminem/wordsEn.txt");
+    file.open ("./tictactoe/wordsEn.txt");
     std::string str;
     std::vector<std::string> mylist;
     while(!file.eof()){
