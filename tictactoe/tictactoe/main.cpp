@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include "tictactoe.cpp"
 #include "rockpaperscissors.cpp"
+#include "mastermind.cpp"
 
 class TicTacToe;
 class RockPaperScissors;
@@ -33,10 +34,10 @@ int main(int argc, const char * argv[]) {
         RPS->run();
     }
     
-//    if (inputNumber == 3){
-//        Mastermind *MM = new Mastermind;
-//        MM->run();
-//    }
+    if (inputNumber == 3){
+        Mastermind *MM = new Mastermind;
+        MM->run();
+    }
 //
 //    if (inputNumber == 4){
 //        Hangman *HM = new Hangman;
