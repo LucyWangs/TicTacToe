@@ -9,17 +9,16 @@
 #include <iostream>
 #include <cstdlib>
 
-class TicTacToe;
 class RockPaperScissors;
 class SuperTicTacToe;
-                                                                            //I don't know if we need this to be an enum
+
 enum Piece
 {
     X,
     O
 };
 
-                                                                            //I don't know if we need this player struct
+//I don't know if we need this player struct
 
 ////////////////////////
 // "Player.h"
@@ -195,9 +194,9 @@ bool TicTacToe::checkWin()
 bool TicTacToe::placePiece(Piece p, char location)
 {
     bool canPlace = false;
-//    if (row>=3 or col>=3){
-//        return false;
-//    }
+    //    if (row>=3 or col>=3){
+    //        return false;
+    //    }
     int row, col;
     
     if(location == 'A')
@@ -343,6 +342,7 @@ int main(int argc, const char * argv[]) {
     else{
         std::cout << "It's a tie!";
     }
-
-
+    
+    
 }
+
