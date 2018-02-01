@@ -41,30 +41,30 @@ std::string RockPaperScissors::checkWin(std::string input)
         
         if(computerChoice == input)
         {
-            response += "It's a tie!";
+            response += "It's a tie!\n";
         }
         else if((computerChoice == "rock" and input == "scissors") or (computerChoice == "scissors" and input == "paper") or (computerChoice == "paper" and input == "rock"))
         {
-            response += "Computer wins!";
+            response += "Computer wins!\n";
         }
         else if((input == "rock" and computerChoice == "scissors") or (input == "scissors" and computerChoice == "paper") or (input == "paper" and computerChoice == "rock"))
         {
-            response += "Player wins!";
+            response += "Player wins!\n";
         }
     }
     else
     {
         if((computerChoice == "rock" and (input == "scissors" or input == "lizard")) or (computerChoice == "scissors" and (input == "paper" or input == "lizard")) or (computerChoice == "paper" and (input == "rock" or input == "spock")) or (computerChoice == "lizard" and (input == "paper" or input == "spock")) or (computerChoice == "spock" and (input == "rock" and input == "scissors")))
         {
-            response += "Computer wins!";
+            response += "Computer wins!\n";
         }
         else if((input == "rock" and (computerChoice == "scissors" or computerChoice == "lizard")) or (input == "scissors" and (computerChoice == "paper" or computerChoice == "lizard")) or (input == "paper" and (computerChoice == "rock" or computerChoice == "spock")) or (input == "lizard" and (computerChoice == "paper" or computerChoice == "spock")) or (input == "spock" and (computerChoice == "rock" and computerChoice == "scissors")))
         {
-            response += "Player wins!";
+            response += "Player wins!\n";
         }
         else
         {
-            response += "It's a tie!";
+            response += "It's a tie!\n";
         }
         
     }
@@ -160,6 +160,7 @@ void RockPaperScissors::run()
         if(checkInput(inputStr))
         {
             std::cout << checkWin(inputStr);
+            valid = true;
         }
         else
         {
