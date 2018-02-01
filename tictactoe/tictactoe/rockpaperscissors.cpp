@@ -54,17 +54,17 @@ std::string RockPaperScissors::checkWin(std::string input)
     }
     else
     {
-        if(computerChoice == input)
-        {
-            response += "It's a tie!";
-        }
-        else if((computerChoice == "rock" and (input == "scissors" or input == "lizard")) or (computerChoice == "scissors" and (input == "paper" or input == "lizard")) or (computerChoice == "paper" and (input == "rock" or input == "spock")) or (computerChoice == "lizard" and (input == "paper" or input == "spock")) or (computerChoice == "spock" and (input == "rock" and input == "scissors")))
+        if((computerChoice == "rock" and (input == "scissors" or input == "lizard")) or (computerChoice == "scissors" and (input == "paper" or input == "lizard")) or (computerChoice == "paper" and (input == "rock" or input == "spock")) or (computerChoice == "lizard" and (input == "paper" or input == "spock")) or (computerChoice == "spock" and (input == "rock" and input == "scissors")))
         {
             response += "Computer wins!";
         }
         else if((input == "rock" and (computerChoice == "scissors" or computerChoice == "lizard")) or (input == "scissors" and (computerChoice == "paper" or computerChoice == "lizard")) or (input == "paper" and (computerChoice == "rock" or computerChoice == "spock")) or (input == "lizard" and (computerChoice == "paper" or computerChoice == "spock")) or (input == "spock" and (computerChoice == "rock" and computerChoice == "scissors")))
         {
             response += "Player wins!";
+        }
+        else
+        {
+            response += "It's a tie!";
         }
         
     }
@@ -74,19 +74,21 @@ std::string RockPaperScissors::checkWin(std::string input)
 
 std::string RockPaperScissors::getChoice()
 {
-    int num = rand() % 100;
+    srand(time(0));
+    int num;
+    num = rand() % 10000;
     std::string choices_regular[3] = {"rock", "paper", "scissors"};
     std::string choices_ls[5] = {"rock", "paper", "scissors", "lizard", "spock"};
     
     if(isRegular)
     {
         num = num % 3;
-        computerChoice = choices_regular[num - 1];
+        computerChoice = choices_regular[num];
     }
     else
     {
         num = num % 5;
-        computerChoice = choices_ls[num - 1];
+        computerChoice = choices_ls[num];
     }
     
     return computerChoice;

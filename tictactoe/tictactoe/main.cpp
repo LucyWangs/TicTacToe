@@ -56,12 +56,12 @@ int main(int argc, const char * argv[]) {
         HM->run();
     }
         
-        std::cout << "Do you want to play another game?  Enter Y or N"<<'\n';
-        std::string yesNoInput;
-        std::cin >> yesNoInput;
-        if(yesNoInput=="N"){
-            break;
-        }
+    std::cout << "Do you want to play another game?  Enter Y or N"<<'\n';
+    std::string yesNoInput;
+    std::cin >> yesNoInput;
+    if(yesNoInput=="N"){
+        break;
+    }
     
     }
 }

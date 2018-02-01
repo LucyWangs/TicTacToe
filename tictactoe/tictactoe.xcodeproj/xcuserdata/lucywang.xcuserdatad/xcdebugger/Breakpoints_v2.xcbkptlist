@@ -10,13 +10,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tictactoe/rockpaperscissors.cpp"
-            timestampString = "539153333.566036"
+            timestampString = "539192508.513845"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "8"
             endingLineNumber = "8"
             landmarkName = "unknown"
             landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RockPaperScissors::RockPaperScissors()"
+                  moduleName = "tictactoe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucywang/Documents/GitHub/TicTacToe/tictactoe/tictactoe/rockpaperscissors.cpp"
+                  timestampString = "539190278.331944"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RockPaperScissors::RockPaperScissors()"
+                  moduleName = "tictactoe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucywang/Documents/GitHub/TicTacToe/tictactoe/tictactoe/rockpaperscissors.cpp"
+                  timestampString = "539190278.334376"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "25">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,11 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tictactoe/rockpaperscissors.cpp"
-            timestampString = "539153333.566589"
+            timestampString = "539192508.514528"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167">
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "RockPaperScissors::run()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
