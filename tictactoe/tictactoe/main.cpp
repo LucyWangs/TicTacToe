@@ -20,10 +20,20 @@ class Mastermind;
 class Hangman;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Pick a game to play"<<'\n'<< "1) Tic Tac Toe"<<'\n'<< "2) Rock Paper Scissors"<<'\n'<< "3) Mastermind"<<'\n'<< "4) Hangman";
+    bool replay = true;
+    
+    
+    while (replay){
+    std::cout << "Pick a game to play by entering a number 1 to 4:"<<'\n'<< "1) Tic Tac Toe"<<'\n'<< "2) Rock Paper Scissors"<<'\n'<< "3) Mastermind"<<'\n'<< "4) Hangman"<<'\n';
     int inputNumber;
     std::cin >> inputNumber;
+    
+    
+    while(inputNumber != 1 and inputNumber != 2 and inputNumber != 3 and inputNumber != 4){
+        std::cout << "Please enter a number 1 to 4";
+        std::cin >> inputNumber;
+    }
+    
     
     if (inputNumber == 1){
         TicTacToe *TTT = new TicTacToe;
@@ -45,6 +55,14 @@ int main(int argc, const char * argv[]) {
         Hangman *HM = new Hangman;
         HM->run();
     }
+        
+        std::cout << "Do you want to play another game?  Enter Y or N"<<'\n';
+        std::string yesNoInput;
+        std::cin >> yesNoInput;
+        if(yesNoInput=="N"){
+            break;
+        }
     
+    }
 }
 
