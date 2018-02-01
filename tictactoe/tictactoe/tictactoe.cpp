@@ -283,7 +283,7 @@ bool TicTacToe::isFull(){
 
 void TicTacToe::run() {
     TicTacToe *game = new TicTacToe;
-    std::cout << "Welcome to Super Tic Tac Toe!\n";
+    std::cout << "Welcome to Tic Tac Toe!\n";
     std::cout << "Player 1 will place O's and Player 2 will place X's\n";
     while(!game->checkWin() and !game->isFull()){
         
@@ -319,10 +319,10 @@ void TicTacToe::run() {
     //if loop exited, determines why and outputs appropriate statement
     game->printGrid();
     if(game->checkWin()){
-        std::cout << "Congrats you won!";
+        std::cout << "Congrats you won!\n";
     }
     else{
-        std::cout << "It's a tie!";
+        std::cout << "It's a tie!\n";
     }
     
 }

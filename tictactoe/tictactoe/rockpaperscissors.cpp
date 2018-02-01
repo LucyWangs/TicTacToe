@@ -34,36 +34,37 @@ public:
 //This method checks who wins.
 std::string RockPaperScissors::checkWin(std::string input)
 {
-    std::string response = "";
+    std::string response = "Computer played: " + computerChoice + "\n";
     
     if(isRegular)
     {
+        
         if(computerChoice == input)
         {
-            response = "It's a tie!";
+            response += "It's a tie!";
         }
         else if((computerChoice == "rock" and input == "scissors") or (computerChoice == "scissors" and input == "paper") or (computerChoice == "paper" and input == "rock"))
         {
-            response = "Computer wins!";
+            response += "Computer wins!";
         }
         else if((input == "rock" and computerChoice == "scissors") or (input == "scissors" and computerChoice == "paper") or (input == "paper" and computerChoice == "rock"))
         {
-            response = "Player wins!";
+            response += "Player wins!";
         }
     }
     else
     {
         if(computerChoice == input)
         {
-            response = "It's a tie!";
+            response += "It's a tie!";
         }
         else if((computerChoice == "rock" and (input == "scissors" or input == "lizard")) or (computerChoice == "scissors" and (input == "paper" or input == "lizard")) or (computerChoice == "paper" and (input == "rock" or input == "spock")) or (computerChoice == "lizard" and (input == "paper" or input == "spock")) or (computerChoice == "spock" and (input == "rock" and input == "scissors")))
         {
-            response = "Computer wins!";
+            response += "Computer wins!";
         }
         else if((input == "rock" and (computerChoice == "scissors" or computerChoice == "lizard")) or (input == "scissors" and (computerChoice == "paper" or computerChoice == "lizard")) or (input == "paper" and (computerChoice == "rock" or computerChoice == "spock")) or (input == "lizard" and (computerChoice == "paper" or computerChoice == "spock")) or (input == "spock" and (computerChoice == "rock" and computerChoice == "scissors")))
         {
-            response = "Player wins!";
+            response += "Player wins!";
         }
         
     }
@@ -118,10 +119,12 @@ void RockPaperScissors::run()
 {
     std::cout << "Welcome to Rock Paper Scissors\n";
     std::cout << "You will be playing against the computer.\n";
+    std::cout << "How many rounds do you want to play? \n";
     
     std::cout << "Do you want to play regular rock, paper, scissors or rock, paper, scissors, lizard, spock? Please enter 'regular' or 'ls'.\n";
     bool valid = false;
-    while(!valid)
+    
+    while(!valid )
     {
         std::string input;
         std::cin >> input;
@@ -136,7 +139,7 @@ void RockPaperScissors::run()
         {
             isRegular = false;
             valid = true;
-            std::cout << "Choose rock, paper, lizard, spock: ";
+            std::cout << "Choose rock, paper, scissors, lizard, spock: ";
             break;
         }
         else
