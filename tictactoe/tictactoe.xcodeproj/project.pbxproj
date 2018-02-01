@@ -27,6 +27,8 @@
 		9F5C4389201EA29C00C1D34A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9F94DED82022CB220077662B /* rockpaperscissors.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rockpaperscissors.cpp; sourceTree = "<group>"; };
 		9F94DED92022CB470077662B /* tictactoe.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tictactoe.cpp; sourceTree = "<group>"; };
+		FF4ADD7D2023088200F5B5EE /* hangman.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hangman.cpp; sourceTree = "<group>"; };
+		FF4ADD7E2023095F00F5B5EE /* wordsEn.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = wordsEn.txt; path = "../../../../Final Project/deminem/deminem/wordsEn.txt"; sourceTree = "<group>"; };
 		FF581FD92022F51E00D6CCBF /* mastermind.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mastermind.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,10 +62,12 @@
 		9F5C4388201EA29C00C1D34A /* tictactoe */ = {
 			isa = PBXGroup;
 			children = (
+				FF4ADD7E2023095F00F5B5EE /* wordsEn.txt */,
 				9F5C4389201EA29C00C1D34A /* main.cpp */,
 				9F94DED82022CB220077662B /* rockpaperscissors.cpp */,
 				9F94DED92022CB470077662B /* tictactoe.cpp */,
 				FF581FD92022F51E00D6CCBF /* mastermind.cpp */,
+				FF4ADD7D2023088200F5B5EE /* hangman.cpp */,
 			);
 			path = tictactoe;
 			sourceTree = "<group>";

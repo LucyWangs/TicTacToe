@@ -12,6 +12,7 @@
 #include "tictactoe.cpp"
 #include "rockpaperscissors.cpp"
 #include "mastermind.cpp"
+#include "hangman.cpp"
 
 class TicTacToe;
 class RockPaperScissors;
@@ -38,11 +39,12 @@ int main(int argc, const char * argv[]) {
         Mastermind *MM = new Mastermind;
         MM->run();
     }
-//
-//    if (inputNumber == 4){
-//        Hangman *HM = new Hangman;
-//        HM->run();
-//    }
+    
+
+    if (inputNumber == 4){
+        Hangman *HM = new Hangman;
+        HM->run();
+    }
     
 }
 
